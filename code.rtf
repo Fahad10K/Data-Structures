@@ -1,0 +1,1129 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 #include <stdio.h>\par
+int main()\par
+\{\par
+  int array[20], n, c, d, temp;\par
+\par
+  printf("Enter number of elements\\n");\par
+  scanf("%d", &n);//10\par
+\par
+ printf("Now enter your array elements:-");\par
+  for (c = 0; c < n; c++)\par
+    scanf("%d", &array[c]);\par
+\par
+  for (c = 0 ; c < n - 1; c++)//pass\par
+  \{\par
+    for (d = 0 ; d < n - c - 1; d++)//comparisions\par
+    \{\par
+      if (array[d] > array[d+1]) /* For decreasing order use '<' instead of '>' */\par
+      \{\par
+        temp       = array[d];\par
+        array[d]   = array[d+1];\par
+        array[d+1] = temp;\par
+      \}\par
+    \}\par
+  \}\par
+\par
+  printf("Sorted list in ascending order:\\n");\par
+\par
+  for (c = 0; c < n; c++)\par
+     printf("%d\\n", array[c]);\par
+\par
+  return 0;\par
+\}\par
+\pard\sa200\sl276\slmult1\qc\fs52\par
+\par
+2-D ARRAY\fs22\par
+\pard\sa200\sl276\slmult1\par
+#include<stdio.h>\par
+int main()\par
+\{\par
+  int i,j,a[5][3],k=1,sum;\par
+  float avg,avgarr[5];\par
+  for(i=0;i<5;i++)\par
+\tab\{\par
+\tab      printf("enter marks of Student Number %d\\n",i+1);\par
+\tab for(j=0;j<3;j++)\par
+\tab\{\par
+\tab\tab scanf("%d",&a[i][j]);\par
+\tab\}\par
+\tab\}\par
+\tab printf("\\t\\n\\n-------xMARKS TABLEx-------\\n");\par
+\par
+\tab for(i=0;i<5;i++)//student\par
+\tab\{\par
+\tab     sum=0;\par
+\tab for(j=0;j<3;j++)//3 tests marks\par
+\tab\{\par
+\tab    sum+=a[i][j];\par
+\tab\}\par
+\tab printf("\\n total Marks of student %d--> %d",i+1,sum);\par
+\par
+\tab\}\par
+\tab for(i=0;i<5;i++)//student\par
+\tab\{\par
+\tab     sum=0;\par
+\tab for(j=0;j<3;j++)//3 tests marks\par
+\tab\{\par
+\tab    sum+=a[i][j];\par
+\tab    avg=(float)sum/3;\par
+\tab    avgarr[i]=avg;\par
+\tab\}\par
+\tab printf("\\n Average marks of student %d--> %.2f",i+1,avg);\par
+\par
+\tab\}\par
+\tab for(i=0;i<5;i++)\par
+\tab\{\par
+\tab     printf("\\n avgarr[%d] = %.2f",i+1,avgarr[i]);\par
+\tab\}\par
+ \par
+\}\par
+\par
+\par
+\pard\sa200\sl276\slmult1\qc\b\fs52 2D ARRAY -1\b0\fs22\par
+\pard\sa200\sl276\slmult1\par
+\par
+#include<stdio.h>\par
+int main()\par
+\{\par
+  int i,j,a[5][3],k=1,sum;\par
+  float avg,avgarr[5];\par
+  for(i=0;i<5;i++)\par
+\tab\{\par
+\tab      printf("enter marks of Student Number %d\\n",i+1);\par
+\tab for(j=0;j<3;j++)\par
+\tab\{\par
+\tab\tab scanf("%d",&a[i][j]);\par
+\tab\}\par
+\tab\}\par
+\tab printf("\\t\\n\\n-------xMARKS TABLEx-------\\n");\par
+\par
+\tab for(i=0;i<5;i++)//student\par
+\tab\{\par
+\tab     sum=0;\par
+\tab for(j=0;j<3;j++)//3 tests marks\par
+\tab\{\par
+\tab    sum+=a[i][j];\par
+\tab    avg=(float)sum/3;\par
+\tab    avgarr[i]=avg;\par
+\tab\}\par
+\tab printf("\\n total Marks of student %d--> %d",i+1,sum);\par
+\tab printf("\\n Average marks of student %d--> %.2f \\n",i+1,avg);\par
+\tab\}\par
+\tab\par
+\tab for(i=0;i<5;i++)\par
+\tab\{\par
+\tab     printf("\\n avgarr[%d] = %.2f",i+1,avgarr[i]);\par
+\tab\}\par
+ \par
+\}\par
+\b\par
+\pard\sa200\sl276\slmult1\qc\fs56 2D ARRAY 3\b0\fs22\par
+\pard\sa200\sl276\slmult1\par
+\par
+#include <stdio.h>\par
+\par
+int main()\par
+\{\par
+  int i,j,a[5][3],k=1,sum;\par
+  float avg,avgarr[5];\par
+  for(i=0;i<5;i++)\par
+\tab\{\par
+\tab      printf("enter marks of Student Number %d\\n",i+1);\par
+\tab for(j=0;j<3;j++)\par
+\tab\{\par
+\tab\tab scanf("%d",&a[i][j]);\par
+\tab\}\par
+\tab\}\par
+\tab printf("\\t\\n\\n-------xMARKS TABLEx-------\\n");\par
+for(i=0;i<5;i++)\par
+\tab\{\par
+\tab for(j=0;j<3;j++)\par
+\tab\{\par
+\tab printf("|  %d | ",a[i][j]);\par
+\tab\}\par
+\tab printf("\\n");\par
+\tab\}\par
+\par
+\tab for(i=0;i<5;i++)//student\par
+\tab\{\par
+\tab     sum=0;\par
+\tab for(j=0;j<3;j++)//3 tests marks\par
+\tab\{\par
+\tab    sum+=a[i][j];\par
+\tab    avg=(float)sum/3;\par
+\tab    avgarr[i]=avg;\par
+\tab\}\par
+\tab printf("\\n total Marks of student %d--> %d",i+1,sum);\par
+\tab printf("\\n Average marks of student %d--> %.2f \\n",i+1,avg);\par
+\tab\}\par
+\tab\par
+\tab for(i=0;i<5;i++)\par
+\tab\{\par
+\tab     printf("\\n avgarr[%d] = %.2f",i+1,avgarr[i]);\par
+\tab  sum2+=avgarr[i];\par
+\tab\}\par
+\tab avg2=sum2/5;\par
+ printf("\\nClass average---> %.2f",avg2);\par
+\}\par
+\par
+\par
+\par
+\par
+#include<stdio.h>\par
+#include<stdlib.h>\par
+#include<string.h>\par
+int\par
+main ()\par
+\{\par
+  char s[30], b[30];\par
+  int i, j = 0;\par
+  printf ("enter string:");\par
+  gets (s);\tab\tab\tab //anchal\par
+  for (i = 0; s[i] != '\\0'; i++)\par
+    \{\par
+      j = s[i];\par
+      if (j >= 65 && j <= 90)\par
+\tab\{\par
+\tab   j = j + 32;\par
+\tab   s[i] = j;\par
+\tab\}\par
+\par
+    \}\par
+\par
+\par
+  puts (s);\par
+\}\par
+\par
+\par
+\par
+\par
+#include <stdio.h>\par
+#include <string.h>\par
+ \par
+int main()\par
+\{\par
+    int i,j;\par
+    char s[100],sr[100];\par
+    \par
+    printf("Enter a string---> ");\par
+    gets(s);\par
+ \par
+    for (i=0,j=0;s[i]!='\\0';i++)\par
+    \{\par
+        if((s[i]>=64&&s[i]<=90)||(s[i]>=97&&s[i]<=122)||(s[i]==' '))\par
+        \{\par
+            sr[j]=s[i];\par
+            j++;\par
+            \par
+        \}\par
+    \}\par
+    sr[j]='\\0';\par
+    printf("after --> %s",sr);\par
+\par
+     \} \par
+     #include <stdio.h>\par
+#include <string.h>\par
+ \par
+int main()\par
+\{\par
+    int i,j,count=0;\par
+    char s[100];//sr[100];\par
+    \par
+    printf("Enter a string---> ");\par
+    gets(s);\par
+ \par
+    for (i=0;s[i]!='\\0';i++)\par
+    \{\par
+        if(s[i] !=' ')\par
+        \{\par
+            continue;\par
+        \}\par
+        else\par
+        \{\par
+            count++;\par
+        \}\par
+    \}\par
+    \par
+       printf("after removing spaces --> %d",count+1);\par
+\par
+     \} \par
+     \par
+#include <stdio.h>\par
+#include <string.h>\par
+ \par
+int main()\par
+\{\par
+    int i,j;\par
+    char s[100],sr[100];\par
+    \par
+    printf("Enter a string---> ");\par
+    gets(s);\par
+ \par
+    for (i=0,j=0;s[i]!='\\0';i++)\par
+    \{\par
+        if(s[i] !=' ')\par
+        \{\par
+            sr[j]=s[i];\par
+            j++;\par
+        \}\par
+    \}\par
+    sr[j]='\\0';\par
+       printf("after removing spaces --> %s",sr);\par
+\par
+     \} \par
+     #include <stdio.h>\par
+#include <string.h>\par
+ \par
+int main()\par
+\{\par
+    int i,l=0,flag=1;\par
+    char s[50],sr[50];\par
+    \par
+    printf("Enter a string---> ");\par
+    gets(s);\par
+    \par
+    for (i=0;s[i]!='\\0';i++)\par
+    \{\par
+        l++;\par
+    \}\par
+    \par
+    for (i=l - 1;i>=0;i--)\par
+    \{\par
+        sr[l- i - 1] = s[i];\par
+    \}\par
+ \par
+ \par
+    for (i = 0; i < l ; i++)\par
+    \{\par
+        if(sr[i] != s[i])\par
+        \{\par
+            flag = 0;\par
+        \}\par
+    \}\par
+    if (flag == 1)\par
+    \{\par
+       printf ("%s is a palindrome string \\n", s);\par
+    \}\par
+    else\par
+     \{\par
+       printf("%s is not a palindrome \\n", s);\par
+\par
+     \} \par
+     \par
+\}\par
+\par
+2D-----> ARRAY STRING SEARCHING NAME ON THE LIST \par
+\par
+#include<stdio.h>\par
+int main()\par
+\{\par
+\tab char name[5][20]=\{"ram","sham","max","jerry","tom"\},s[10];\par
+\tab int i,flag=0,r,n,f=1;\par
+\tab for(i=0;i<=4;i++)\par
+\tab\{\par
+\tab\tab printf("Enter usernames %d ",i+1);\par
+\tab\tab gets(name[i]);\par
+\tab\}\par
+\tab\par
+\tab for(i=0;i<=4;i++)\par
+\tab\{\par
+\tab\tab printf("Username %d: ",i+1);\par
+\tab\tab puts(name[i]);\par
+\tab\}\par
+\tab printf("\\nenter your name -- > ");\par
+\tab gets(s);\par
+\tab\par
+    for(i=0;i<4;i++)\par
+      \{\par
+         \par
+       if(strcmp(s,name[i])==0)\par
+        \{\par
+          flag=1;\par
+          r=i + 1;\par
+        \}\par
+      \}\par
+\par
+    if(flag==1)\par
+    \{\par
+        printf("\\nYour name is on the list at %d rank..",r);\par
+        printf("\\nYou are allowed to calculate the factorial of a number of your choice...\\nEnter a No. --> ");\par
+        scanf("%d",&n);\par
+        for(i=1;i<=n;i++)\par
+        \{\par
+            f=f*i;\par
+        \}\par
+        printf("\\nFactorial is --> %d",f);\par
+    \}    \par
+    else\par
+    \{\par
+        printf("\\nYour name is not on the list..");\par
+    \}\par
+        \par
+\}\par
+\par
+#include<stdio.h>\par
+#include<string.h>\par
+#include<stdlib.h>\par
+int main()\par
+\{\par
+\tab char names[5][20];//=\{"ram","sham","max","jerry","tom"\};\par
+\tab char temp[20];\par
+\tab int i,flag=0,r,f=1,j;\par
+\tab for(i=0;i<=4;i++)\par
+\tab\{\par
+\tab\tab printf("Enter usernames %d ",i+1);\par
+\tab\tab gets(names[i]);\par
+\tab\}\par
+\tab\par
+\tab for(i=0;i<=4;i++)\par
+\tab\{\par
+\tab\tab printf("Username %d: ",i+1);\par
+\tab\tab puts(names[i]);\par
+\tab\}\par
+\par
+\tab\par
+    for (i = 1; i <= 5 - 1; i++)\par
+    \{\par
+        for (j = 0; j <= 5 - i - 1; j++) \par
+        \{\par
+            if (strcmp(names[j], names[j + 1]) > 0) \par
+            \{ \par
+                \par
+                strcpy(temp, names[j]); \par
+                strcpy(names[j], names[j + 1]); \par
+                strcpy(names[j + 1], temp); \par
+            \} \par
+        \}\par
+    \}    \par
+    printf("\\n\\nafter sorting-->\\n");\par
+\tab for(i=0;i<=4;i++)\par
+\tab\{\par
+\tab\tab\par
+\tab\tab puts(names[i]);\par
+\tab\}\par
+    \par
+\}\par
+\par
+\pard\sa200\sl276\slmult1\qc\fs72 FUNCTIONS\fs22\par
+\pard\sa200\sl276\slmult1 areea of crcle \par
+\par
+#include <stdio.h>\par
+float ar(int r)\par
+\{\par
+    return (3.14*r*r);\par
+\}\par
+\par
+int main()\par
+\{\par
+    \par
+    int r;\par
+    float area;\par
+    printf("Enter the radius of a circle-->");\par
+    scanf("%d",&r);\par
+    area=ar(r);\par
+    printf("\\narea of circle = %.2f ",area);\par
+\par
+    return 0;\par
+\}\par
+\par
+\par
+#include <stdio.h>\par
+void fact()\par
+\{\par
+    int a,i,r=1;\par
+    printf("Enter the number whose factorail you want--->\\n");\par
+    scanf("%d",&a);\par
+    for(i=1;i<=a;i++)\par
+    \{\par
+        r=r*i;\par
+    \}\par
+    printf("\\nFactorail of %d is %d",a,r);\par
+\}\par
+\par
+int main()\par
+\{\par
+   fact();\par
+\par
+\}\par
+\par
+#include <stdio.h>\par
+int fact(int a)\par
+\{\par
+    int i,r=1;\par
+   \par
+    for(i=1;i<=a;i++)\par
+    \{\par
+        r=r*i;\par
+    \}\par
+   \par
+    return r;\par
+\}\par
+\par
+int main()\par
+\{\par
+    int facto,a;\par
+     printf("Enter the number whose factorail you want--->\\n");\par
+    scanf("%d",&a);\par
+   facto=fact(a);\par
+    printf("\\nFactorail of %d is %d",a,facto);\par
+\par
+\}\par
+\par
+#include <stdio.h>\par
+int fact(int a)\par
+\{\par
+    int i,r=1;\par
+   \par
+    for(i=1;i<=a;i++)\par
+    \{\par
+        r=r*i;\par
+    \}\par
+   printf("\\nFactorail of %d is %d",a,r);\par
+    \par
+\}\par
+\par
+int main()\par
+\{\par
+    int a;\par
+    printf("Enter the number whose factorail you want--->\\n");\par
+    scanf("%d",&a);\par
+    fact(a);\par
+    \par
+\par
+\}\par
+\par
+#include <stdio.h>\par
+int fact()\par
+\{\par
+    int i,r=1;\par
+   \par
+    for(i=1;i<=a;i++)\par
+    \{\par
+        r=r*i;\par
+    \}\par
+   return r;\par
+    \par
+\}\par
+\par
+int main()\par
+\{\par
+    int a,facto;\par
+    printf("Enter the number whose factorail you want--->\\n");\par
+    scanf("%d",&a);\par
+    facto=fact(a);\par
+    printf("\\nFactorail of %d is %d",a,facto);\par
+\par
+    \par
+\par
+\}#include <stdio.h>\par
+int fact()\par
+\{\par
+    int i,r=1;\par
+   \par
+    for(i=1;i<=a;i++)\par
+    \{\par
+        r=r*i;\par
+    \}\par
+   return r;\par
+    \par
+\}\par
+\par
+int main()\par
+\{\par
+    int a,facto;\par
+    printf("Enter the number whose factorail you want--->\\n");\par
+    scanf("%d",&a);\par
+    facto=fact(a);\par
+    printf("\\nFactorail of %d is %d",a,facto);\par
+\par
+    \par
+\par
+\}\par
+\par
+\par
+#include <stdio.h>\par
+int max(int a,int b)\par
+\{\par
+    if(a>b)\par
+    \{\par
+       return a;\par
+    \}\par
+    else\par
+    \{\par
+       return b;\par
+    \}\par
+   \par
+\}\par
+\par
+int main()\par
+\{\par
+    int maxo,a,b;\par
+    printf("Enter the two numbers--->\\n");\par
+    scanf("%d %d",&a,&b);\par
+    maxo=max(a,b);\par
+    printf("\\nMax out of two numbers enetred is %d",maxo);\par
+\par
+\}\par
+\par
+#include <stdio.h>\par
+int max(int a,int b)\par
+\{\par
+    if(a>b)\par
+    \{\par
+       return a;\par
+    \}\par
+    else\par
+    \{\par
+       return b;\par
+    \}\par
+   \par
+\}\par
+\par
+int main()\par
+\{\par
+    int maxo,a,b;\par
+    printf("Enter the two numbers--->\\n");\par
+    scanf("%d %d",&a,&b);\par
+    maxo=max(a,b);\par
+    printf("\\nMax out of two numbers enetred is %d",maxo);\par
+\par
+\}\par
+\par
+#include<stdio.h>\par
+int i;\par
+void avg(int arr[])\par
+\{\par
+    int s=0;\par
+    float avg1;\par
+\tab for(i=0;i<5;i++)\par
+\tab\{\par
+\tab\tab s=s+arr[i];\par
+\tab\}\par
+\tab avg1=s/5;\par
+\tab printf("\\nAverage marks of student = %.2f",avg);\par
+\}\par
+\par
+int main()\par
+\{\par
+\tab int marks[5];\par
+\tab printf("enter marks of the student in 5 subjects -->\\n");\par
+\tab for(i=0;i<5;i++)\par
+\tab\{\par
+\tab  printf("Marks in Subject %d = ",i+1);\par
+\tab  scanf("%d",&marks[i]);\par
+\tab\}\par
+\tab avg(marks);\par
+\tab\par
+\}\par
+\par
+#include<stdio.h>\par
+\par
+int i;\par
+void max(int a[],int n)\par
+\{\par
+    int max=-999;\par
+\tab for(i=0;i<n;i++)\par
+\tab\{\par
+\tab\tab if(a[i]>max)\par
+\tab\tab\{\par
+\tab\tab     max=a[i];\par
+\tab\tab\}\par
+\tab\}\par
+\tab printf("\\nmax num is = %d",max);\par
+\}\par
+void min(int a[],int n)\par
+\{\par
+    int min=999;\par
+\tab for(i=0;i<n;i++)\par
+\tab\{\par
+\tab\tab if(a[i]<min)\par
+\tab\tab\{\par
+\tab\tab     min=a[i];\par
+\tab\tab\}\par
+\tab\}\par
+\tab printf("\\nmin num is = %d",min);\par
+\tab\par
+\}\par
+int main()\par
+\{\par
+\tab int n;\par
+\tab printf("enter number of elements you want to enter:");\par
+\tab scanf("%d",&n);\par
+\tab int a[n];\par
+\tab for(i=0;i<n;i++)\par
+\tab scanf("%d",&a[i]);\\\par
+\tab max(a,n);\par
+\tab min(a,n);\par
+\tab\par
+\}\par
+\par
+\par
+#include<stdio.h>\par
+int i;\par
+\par
+void rev(int a[],int n)\par
+\{\par
+    printf("\\nReversed array --> ");\par
+\tab for(i=n-1;i>=0;i--)\par
+\tab\{\par
+\tab\tab printf("%d ",a[i]);\par
+\tab\}\par
+\par
+\tab\par
+\}\par
+int main()\par
+\{\par
+\tab int n;\par
+\tab printf("enter number of elements you want to enter:\\n");\par
+\tab scanf("%d",&n);\par
+\tab int a[n];\par
+\tab printf("Enter the elements of array-->\\n");\par
+\tab for(i=0;i<n;i++)\par
+\tab scanf("%d",&a[i]);\par
+\tab rev(a,n);\par
+\tab\par
+\tab\par
+\}\par
+\par
+\par
+#include <stdio.h>\par
+ int d,s;\par
+void add(int *x,int *y)\par
+\{\par
+    d= *x + *y;\par
+    printf("on adding two number answer is = %d \\n",d);\par
+\}\par
+void sub(int *p,int *q)\par
+\{\par
+    s= *p - *q;\par
+    printf("on subtarcting = %d",s);\par
+\}\par
+\par
+int main()\par
+\{\par
+    int a,b;\par
+    printf("Enter two numbers--> \\n");\par
+    scanf("%d %d",&a,&b);\par
+    add(&a,&b);\par
+    sub(&a,&b);\par
+    return 0;\par
+\}\par
+\par
+\par
+#include <stdio.h>\par
+#include<stdlib.h>\par
+\par
+\par
+int FlipCoin(int flip);\par
+\par
+int main()\{ \par
+\par
+    int flip;\par
+    int heads = 0;\par
+    int total_flips = 0;\par
+    while( heads < 3)\par
+    \{\par
+        total_flips++;\par
+        if(FlipCoin(flip) == 1)\par
+        \{\par
+            heads++;\par
+        \} else\par
+        \{\par
+            heads = 0;\par
+        \}\par
+    \}\par
+    printf("it took %d to get 3 consecutive heads. ",total_flips );\par
+\par
+\}   \par
+\par
+\par
+int FlipCoin(int flip) \par
+\{\par
+\par
+    if (rand()%2==0)\par
+    \{\par
+        return 0;\par
+    \} \par
+    else \par
+    \{\par
+        return 1;\par
+    \}\par
+\}\par
+\par
+#include <stdio.h>\par
+\par
+int main()\par
+\{\par
+    int upp=0,low=0,num=0,spe=0,i,count;\par
+    printf("\\t\\t------x>WELCOME<x------");\par
+    printf("\\nSIGN UP HERE --.\\n Enter Username-->\\n");\par
+    gets(u);\par
+    \par
+    printf("\\nEnter Password-->\\n");\par
+    gets(p);\par
+    int l=strlen(p);\par
+    \par
+    for(i=0;i<l;i++)\par
+    \{\par
+    if((p[i])>=65&&int(p[i])<=90)\par
+    upp++;\par
+    else if((p[i])>=97&&int(p[i])<=122)\par
+    low++;\par
+    else if((p[i])>=48&&int(p[i])<=57)\par
+    num++;\par
+    else if(p[i]=='+'||p[i]=='-'||p[i]=='!'||p[i]=='@'||p[i]=='#'||p[i]=='%'||p[i]=='^'||p[i]=='&'||p[i]=='*'||p[i]=='('||p[i]==')')\par
+    spe++;\par
+    \}\par
+    if(upp==0)\par
+    \{\par
+        count++;\par
+    \}\par
+    if(low==0)\par
+    \{\par
+        count++;\par
+    \}\par
+    if(num==0)\par
+    \{\par
+        count++;\par
+    \}\par
+    if(spe==0)\par
+    \{\par
+        count++;\par
+    \}        \par
+    if(l>=6)\par
+    \{\par
+        printf("You need to add %d charecters to make your password strong ",count);\par
+    \} else \par
+    \{\par
+        if((k+count)>=6)\par
+        \{\par
+        printf("You need to add %d charecters to make your password strong ",count);\par
+            \par
+        \}\par
+        else if((k+count)<6)\par
+        \{\par
+        printf("You need to add %d charecters to make your password strong ",count);\par
+            \par
+        \}\par
+    \}\par
+    \par
+\par
+    return 0;\par
+\}\par
+\par
+#include <stdio.h>\par
+\par
+int main()\par
+\{\par
+    int a[5];\par
+    int i,j,max=-999,max2=-999;\par
+    printf("Enter 5 numbers-->\\n");\par
+    for(i=0;i<5;i++)\par
+    \{\par
+        scanf("%d",&a[i]);\par
+    \}\par
+    for(i=0;i<5;i++)\par
+    \{\par
+       if(a[i]>max)\par
+       \{\par
+           max=a[i];\par
+       \}\par
+    \}\par
+    \par
+    printf("\\nmax number = %d\\n",max);\par
+    for(i=0;i<5;i++)\par
+    \{\par
+        if(a[i]>max2 && a[i]<max)\par
+        \{\par
+            max2=a[i];\par
+        \}\par
+    \}\par
+    printf("\\n2nd max number = %d\\n",max2);\par
+\par
+    return 0;\par
+\}\par
+\par
+\par
+#include<stdio.h>\par
+\par
+struct student\par
+\par
+\{\par
+\par
+\tab char name[15];\par
+\par
+\tab int age;\par
+\par
+\tab long int contact;\par
+\par
+\};\par
+\par
+\par
+\par
+int main()\par
+\par
+\{\par
+\par
+\tab struct student s1,s2;\par
+\par
+\tab\par
+\par
+\tab printf("Enter name:");\par
+\par
+\tab gets(s1.name);\par
+\par
+\tab printf("enter age:");\par
+\par
+\tab scanf("%d",&s1.age);\par
+\par
+\tab printf("enter contact:");\par
+\par
+\tab scanf("%ld",&s1.contact);\par
+\par
+\tab\par
+\par
+\tab printf("\\nname:%s",s1.name);\par
+\par
+\tab printf("\\nage:%d",s1.age);\par
+\par
+\tab printf("\\ncontact:%ld",s1.contact);\par
+\par
+\tab\par
+\par
+\tab\par
+\par
+\tab\par
+\par
+\}\par
+\par
+// Program to add two distances (feet-inch)\par
+\par
+#include <stdio.h>\par
+\par
+struct Distance\par
+\par
+\{\par
+\par
+  int feet;\par
+\par
+  float inch;\par
+\par
+\} dist1, dist2, sum;\par
+\par
+\par
+\par
+int main()\par
+\par
+\{\par
+\par
+  printf("1st distance\\n");\par
+\par
+  printf("Enter feet: ");\par
+\par
+  scanf("%d", &dist1.feet);\par
+\par
+\par
+\par
+  printf("Enter inch: ");\par
+\par
+  scanf("%f", &dist1.inch);\par
+\par
+  printf("2nd distance\\n");\par
+\par
+\par
+\par
+  printf("Enter feet: ");\par
+\par
+  scanf("%d", &dist2.feet);\par
+\par
+\par
+\par
+  printf("Enter inch: ");\par
+\par
+  scanf("%f", &dist2.inch);\par
+\par
+\par
+\par
+  sum.feet = dist1.feet + dist2.feet;\par
+\par
+\par
+\par
+  sum.inch = dist1.inch + dist2.inch;\par
+\par
+\par
+\par
+  if (sum.inch >= 12) \par
+\par
+  \{\par
+\par
+    sum.feet+=1;\par
+\par
+    sum.inch = sum.inch - 12;\par
+\par
+  \}\par
+\par
+\par
+\par
+  printf("Sum of distances = %d\\'-%.1f\\"", sum.feet, sum.inch);\par
+\par
+  return 0;\par
+\par
+\}\par
+\par
+// Program to add two distances (feet-inch)\par
+\par
+#include <stdio.h>\par
+\par
+struct Distance\par
+\par
+\{\par
+\par
+  int hour;\par
+\par
+  int min;\par
+  int sec;\par
+\par
+\} t1, t2, sum;\par
+\par
+\par
+\par
+int main()\par
+\par
+\{\par
+\par
+  printf("1st time\\n");\par
+\par
+  printf("Enter Hours: ");\par
+\par
+  scanf("%d", &t1.hour);\par
+\par
+\par
+\par
+  printf("Enter minutes: ");\par
+\par
+  scanf("%d", &t1.min);\par
+  printf("nenter seconds: ");\par
+   scanf("%d", &t1.sec);\par
+\par
+  printf("2nd time\\n");\par
+\par
+\par
+\par
+printf("Enter Hours: ");\par
+\par
+  scanf("%d", &t2.hour);\par
+\par
+\par
+\par
+  printf("Enter minutes: ");\par
+\par
+  scanf("%d", &t2.min);\par
+  printf("nenter seconds: ");\par
+   scanf("%d", &t2.sec);\par
+\par
+\par
+  sum.hour = t1.hour + t2.hour;\par
+\par
+\par
+\par
+  sum.min = t1.min + t2.min;\par
+  sum.sec = t1.sec + t2.sec;\par
+  for(;sum.sec >= 60;) \par
+\par
+  \{\par
+\par
+    sum.min+=1;\par
+\par
+    sum.sec = sum.sec - 60;\par
+\par
+  \}\par
+\par
+\par
+  for(;sum.min >= 60;) \par
+\par
+  \{\par
+\par
+    sum.hour+=1;\par
+\par
+    sum.min = sum.min - 60;\par
+\par
+  \}\par
+\par
+\par
+\par
+  printf("Sum of distances = %d: %d: %d", sum.hour, sum.min,sum.sec);\par
+\par
+  return 0;\par
+\par
+\}\par
+\par
+\par
+#include <stdio.h> \par
+\par
+#include <stdlib.h>  \par
+\par
+int main() \par
+\par
+\{  // This pointer will hold the \par
+\par
+  // base address of the block created \par
+\par
+  char* ptr; \par
+\par
+  int n, i; \par
+\par
+printf("enter n:");\par
+\par
+scanf("%d",&n);\par
+\par
+ // Dynamically allocate memory using malloc() \par
+\par
+  ptr = (char*)calloc(n,sizeof(char)); \par
+\par
+// Check if the memory has been successfully allocated by malloc or not \par
+\par
+  if (ptr == NULL)\par
+\par
+ \{ \par
+\par
+    printf("Memory not allocated.\\n"); \par
+\par
+    exit(0); \par
+\par
+  \} \par
+\par
+else \{ \par
+\par
+      printf("Memory successfully allocated using malloc.\\n"); \par
+\par
+\par
+    // Get the elements of the array \par
+\par
+    for (i = 1; i < n; ++i) \{ \par
+\par
+      scanf("%c",(ptr+i)); //7 6 7 8 9\par
+\par
+    \} \par
+\par
+ \par
+    // Print the elements of the array \par
+\par
+    printf("The elements of the array are: "); \par
+\par
+    for (i = 0; i < n; ++i) \par
+    \{ \par
+\par
+      printf("%c, ",*(ptr+i)); \par
+\par
+    \} \par
+\par
+  \} \par
+\par
+  free(ptr);\par
+\par
+  return 0; \par
+\par
+\} \par
+}
+ 
