@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a,n,x,k;
+	cin>>a;
+	while(a--){
+	    cin>>n>>x>>k;
+    n++;
+    if(n%k==0 || (n-x)%k==0){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+	}
+	return 0;
+}

@@ -1,0 +1,87 @@
+#include<iostream>
+using namespace std;
+int count=1;
+class comp {
+    int real, imag,tot;
+public:
+    void read(){
+        cout<<"Enter complex Number "<<count<<" -->\n";
+        cout<<"Enter real part --> ";
+        cin>>real;
+        cout<<"Enter Imaginary part --> ";cin>>imag; 
+        count++;
+    }
+    void dis() 
+    {
+        cout <<"\nThe sum is ---> "<< real << " + " << imag<<"i" << endl;
+    }
+  
+friend comp operator + (comp  &, comp &);
+};
+  
+  
+comp operator + (comp &x, comp &y)
+{
+    comp ob;
+    ob.real=x.real + y.real;
+    ob.imag=x.imag + y.imag;
+     return ob;
+}
+  
+  
+int main()
+{
+    comp o, o1;
+    o.read();
+    cout<<"\n";
+    o1.read();
+    comp o2 = o + o1; 
+    o2.dis();
+    return 0;
+}
+
+
+
+#include<iostream>
+using namespace std;
+class B;  
+class A {
+    int a,tot;
+    public:
+    void read()
+    {
+     cin>>a;
+    }
+     void dis()
+    {
+     cout<<"\n\n"<<tot;
+    }
+    friend A operator + (A  &, B &);
+};
+  
+class B{
+    int b;
+    public:
+    void get(){
+        cin>>b;
+    }
+    friend A operator + (A  &, B &);
+};
+A operator + (A  &c1, B &c2)
+{
+    A ob;
+    ob.tot=c1.a + c2.b;
+    return ob;
+}
+  
+  
+int main()
+{
+    A c1;
+    B c2;
+    c1.read();
+    c2.get();
+    A c3 = c1 + c2;
+    c3.dis();
+    return 0;
+}

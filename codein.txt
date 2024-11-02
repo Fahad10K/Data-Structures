@@ -1,0 +1,104 @@
+
+#include <iostream>
+
+using namespace std;
+int count=0, coun=0;
+class a{
+    
+    public:
+    
+   a(){
+        
+        count++;
+    }
+   
+    ~a()
+    {
+        ++coun;
+    }
+    void display()
+    {
+      cout<<"Number of const "<<count<<"\n";
+      cout<<"Number of destruct "<<coun<<"\n";
+      cout<<"Number of active objects "<<count-coun;  
+    }
+
+};
+void hell()
+{
+    a o4,o5,o6;
+    cout<<"\n\nAfter function call\n";
+    o6.display();
+}
+int main()
+{
+    {
+    a o,o1;
+    }
+    a o2,o3;
+    o3.display();
+    hell();
+    cout<<"\n\n";
+    a o7;
+    o7.display();
+    
+    return 0;
+
+}
+
+
+#include <iostream>
+
+using namespace std;
+class B;
+class A{
+    int a=10;
+    friend class B;
+    public:
+    void add(B&);
+   };
+class B{
+    friend class A;
+    int b=20;
+};
+void A::add(B&k)
+{
+    cout<<"ADDING member of clss B b= "<<k.b<<" in class A member a = "<<a<<" we get --> "<<k.b+a;
+}
+
+int main()
+{
+    A o1;
+    B o2;
+    o1.add(o2);
+    return 0;
+}
+
+
+#include <iostream>
+
+using namespace std;
+class B;
+class A{
+    int a=10;
+    friend class B;
+    
+   };
+class B{
+    friend class A;
+    int b=20;
+    public:
+    void add(A&);
+};
+void B::add(A&k)
+{
+    cout<<"ADDING member of clss B b= "<<b<<" in class A member a = "<<k.a<<" we get --> "<<b+k.a;
+}
+
+int main()
+{
+    A o1;
+    B o2;
+    o2.add(o1);
+    return 0;
+}

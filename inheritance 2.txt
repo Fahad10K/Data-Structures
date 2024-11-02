@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class Comp
+    {
+        public:
+            int real;
+            int imag;
+            int rsum,isum;
+        void inp()
+            {
+                cin>>real;
+                cin>>imag;
+            }
+     
+        Comp sum(Comp c2)
+            {
+                Comp m1;
+                m1.rsum=real+c2.real;
+                return m1;
+            }
+        Comp sum2(Comp c2)
+        {
+            Comp m2;
+            m2.isum=imag+c2.imag;
+            return m2;
+        }
+        void display()
+        {
+            cout<<rsum<<" + "<<isum<<"i";
+        }
+    };
+int main()
+    {
+        Comp c1,c2,c3,c4;
+        cout<<"Enter real and imaginary part of first complex number--> ";
+        c1.inp();
+        cout<<"Enter real and imaginary part of second complex number--> ";
+        c2.inp();
+        cout<<"Sum of two complex numbers is --> ";
+        c3=c1.sum(c2);
+        c4=c1.sum2(c2);
+        c3.display();
+        
+       
+    return 0;
+    }

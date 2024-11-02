@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+void excep(){
+    
+}
+int main()
+{
+    int n; ;
+    cin>>n;
+   try{
+       try{
+        if(n>0){throw n;}
+        else {throw 'n';}
+       }
+       catch(char c){cout<<"catch 1 char "<<c;throw c;}
+       catch (int n){cout <<"catch 2 int "<<n;throw n;}    
+    }
+
+    catch(...){cout<<"\ncought again ";}
+    return 0;
+}
+
+
+#include <iostream>
+
+using namespace std;
+void excep(int n)//using funtions
+{
+    if(n>0) {throw n;}
+                            //multiple throws
+    else    {throw 'n';}
+}
+int main()
+{
+    int n; ;
+    cout<<"To Check if the number entered is positive integer or not --> \n";
+    cout<<"Enter a Number --> ";
+    cin>>n;
+   try{
+       try{
+        excep(n);//Throw outside try statement
+       }
+       catch (char c){ cout<<"The Number enterd is a negative integer "; throw c;} //multiple catches & rethrow 
+       catch (int)  { cout <<"The Number Entered is a positive integer "<<n; throw n;} //catching with only data type
+    }
+
+    catch(...){cout<<"\nThe program executed sucessfully  ";}//catch all 
+    return 0;
+}

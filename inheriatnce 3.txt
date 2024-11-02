@@ -1,0 +1,304 @@
+#include <iostream>
+
+
+
+using namespace std;
+
+
+
+class A 
+
+{
+
+  public:
+
+  void display()
+
+  {
+
+    cout<<" A ";
+
+  }
+
+   
+
+};
+
+
+
+class B : public A 
+
+{
+
+  public:
+
+  void display()
+
+  {
+
+    cout<<" B ";
+
+  }
+
+};
+
+
+
+
+
+
+
+int main()
+
+{
+
+  
+
+  A obj;
+
+  A *p; // this belongs to base class
+
+  B o;
+
+  p = &o; //addr of B's object into pointer of A
+
+  p->display(); // base class A
+
+  
+
+  ((B*)p)->display(); // derived class B
+
+  
+
+  
+
+  
+
+  return 0;
+
+}
+
+
+#include <iostream>using namespace std;class A {    int x;    public:    virtual void read()//virtual function    {        cout<<"class A ";    }     void set (int a)   {       this->x = a;//this poitner   }   void print() {        cout << "x = " << x << endl;    }};class B: public A {    public:    void read()    {        cout<<"class B ";        }};int main(){   A *p;   A o;   B o1;     p=&o1; // dyamic binding and poiner to object     p->read(); // dynamic binding    cout<<"\n";   o.read(); // static binding   cout<<"\n<---- 'This' pointer ---->\n\n ";   o.set(20);   o.print();       return 0;}
+
+
+#include <iostream>
+
+using namespace std;
+
+ 
+
+class fruit // abstract class - you cannot create object for this
+
+{
+
+  public:
+
+  virtual void taste()=0; //pure virtal function
+
+  
+
+};
+
+
+
+class mango:public fruit
+
+{
+
+  public:
+
+  void taste()
+
+  {
+
+    cout<<"mango is sweet";
+
+  }
+
+   
+
+  void colour()
+
+  {
+
+    cout<<"yellow";
+
+  }
+
+};
+
+
+
+class apple:public fruit
+
+{
+
+  public:
+
+  void taste()
+
+  {
+
+    cout<<"apple is sweet n sour";
+
+  }
+
+   
+
+  void colour()
+
+  {
+
+    cout<<"colour is red";
+
+  }
+
+};
+
+
+
+
+
+int main() {
+
+    
+
+  fruit *p;
+
+  mango o;
+
+  apple o1;
+
+   
+
+  p=&o;
+
+  p->taste(); // mango
+
+   
+
+  p=&o1;
+
+  p->taste(); // apple
+
+   
+
+  o1.colour(); // apple
+
+  o.colour(); // mango
+
+
+
+   
+
+  return 0;
+
+}
+
+#include <iostream>using namespace std;class fruit {    public:    virtual void taste()=0;//virtual function};class Kiwi: public fruit{    public:    void  taste(){        cout<<"green -->sweet and sour\n";    }    };class mango: public fruit{    public:    void  taste(){        cout<<"yellow -->sweet \n";    }    };class apple: public fruit{    public:    void  taste(){        cout<<"RED-->sweet\n";    }    };class orange: public fruit{    public:    void  taste(){    cout<<"orange-->sweet and sour";    }    };int main(){   Kiwi ob; mango ob1;   orange ob3; apple ob2;   ob.taste();   ob1.taste();   ob2.taste();   ob3.taste();       return 0;}
+
+#include <iostream>
+
+using namespace std;
+class over{
+    public:
+    int a,b;
+    void in(){
+        cout<<"Enter two numbers --> \n1. ";cin>>a;
+        cout<<"2. ";cin>>b;
+    }
+};
+ostream& operator<<(ostream& output,const over& ob){
+        output<<"\nThe sum is --> "<<ob.a+ob.b;
+        return output;
+    }
+int main()
+{
+    over o;
+    o.in();
+    cout << o;
+    return 0;
+}
+
+
+
+
+#include <iostream>
+#include<string.h>
+
+using namespace std;
+int count=1;
+class concatenate{
+    char h[100];
+    public:
+    void in(){
+        cout<<"Enter string "<<count<<" --> "; cin>>h;
+        count++;
+    }
+    concatenate operator +(concatenate &a){
+        concatenate o;
+        strcat(h,a.h);
+        strcpy(o.h,h);
+        return o;
+    }
+    void dis(){
+        cout<<h;
+    }
+    
+};
+
+int main()
+{
+    concatenate o1,o2;
+    o1.in();o2.in();
+    concatenate o3=o1+o2;
+    cout<<"String concatenation --> ";o3.dis();
+   return 0;
+}
+
+
+
+
+#include <iostream>using namespace std;class A {    int x;    public:    int a;    A(){        cout<<"Enter value of a --> ";cin>>a;    }    void set (int a)   {       this->x = a;//this poitner   }   void print() {        cout << "x = " << x << endl;    }};int main(){     A o;   cout<<"\n<---- 'This' pointer ---->\n\n ";   o.set(o.a);   o.print();       return 0;}
+
+
+
+#include <iostream>
+#include<string.h>
+
+using namespace std;
+int k=0,count=1;
+class remov{
+    public:
+    char one[100];
+    void in(){
+        cout<<"Enter string"<<count<<" --> ";cin>>one;
+        count++;
+    }
+    remov removal(remov& ob){
+        remov ob1;
+        int x=strlen(ob.one),l=strlen(one);
+        for(int i=0;i<x;i++){
+        for(int j=0;j<l;j++)
+        {
+        if(one[j]==ob.one[i]){continue;}
+        else{
+            ob1.one[k]=one[j];
+            k++;
+        }
+        }ob1.one[k]='\0';strcpy(one,ob1.one);k=0;}
+        return ob1;
+    }
+    void dis(){
+        cout<<one;
+    }
+};
+int main()
+{
+    remov o,o1,o3;
+    o.in();o1.in();
+    o3=o.removal(o1);
+    o3.dis();
+    return 0;
+}
